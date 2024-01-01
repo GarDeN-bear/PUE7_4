@@ -27,13 +27,8 @@ protected:
 	virtual void BeginPlay() override;
 
 	UFUNCTION(BlueprintCallable)
-	FVector SinMovement(const float& Time);
+	FVector SinMovement();
 
-public:
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
-
-private:
 	UPROPERTY(VisibleAnywhere)
 	UStaticMeshComponent* Mesh;
 
@@ -43,6 +38,10 @@ private:
 	UPROPERTY(EditAnywhere)
 	float Frequency;
 
-	UPROPERTY(EditAnywhere)
+public:
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
+
+private:
 	FVector InitialLocation;
 };

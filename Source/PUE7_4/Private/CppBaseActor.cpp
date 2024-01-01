@@ -17,9 +17,9 @@ void ACppBaseActor::BeginPlay()
 	InitialLocation = GetActorLocation();
 }
 
-FVector ACppBaseActor::SinMovement(const float& Time)
+FVector ACppBaseActor::SinMovement()
 {
-	InitialLocation.Z = Amplitude * sin(Frequency * Time) + InitialLocation.Z;
+	InitialLocation.Z = Amplitude * sin(Frequency * GetWorld()->GetTimeSeconds()) + InitialLocation.Z;
 	return InitialLocation;
 }
 
